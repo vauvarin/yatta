@@ -1,0 +1,92 @@
+// --------------------------------------------------
+// Typography - Default size
+// --------------------------------------------------
+
+$base-font-size: 					16 !default; // 16 px - 1 em
+$base-line-height:      			24 !default; // 24 px - 1.5 em
+$base-font-family-sansserif:      	proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-family-serif:      	    Georgia, "Times New Roman", Times, serif !default;
+$special-font:						$base-font-family-serif;
+$base-font-color:					#555;
+
+// --------------------------------------------------
+// Typography - Function - Convert px to em
+// --------------------------------------------------
+
+// Convert pixels to ems
+@function pxem($pixels, $context: $base-font-size) {
+	@return #{$pixels/$context}em;
+}
+
+
+// --------------------------------------------------
+// Typography - Default styles
+// --------------------------------------------------
+
+%body-typography {
+	font: pxem( $base-font-size ) $base-font-family-sansserif;
+	color: $base-font-color;
+	line-height: pxem( $base-line-height);
+}
+
+/*
+@font-face {
+    font-family: 'bitterregular';
+    src: url('../bitter-regular-webfont.eot');
+    src: url('../bitter-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../bitter-regular-webfont.woff') format('woff'),
+         url('../bitter-regular-webfont.ttf') format('truetype'),
+         url('../bitter-regular-webfont.svg#bitterregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+
+
+/* Titles */
+
+h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+.h1 {
+	margin: 20px 0 10px 0;
+		font-size:  pxem( $base-font-size * 2 );
+}
+
+.h2 {
+	margin: 20px 0 10px 0;
+		font-size:  pxem( $base-font-size * 1.6 );
+}
+
+.h3 {
+	margin: 15px 0 10px 0;
+		font-size:  pxem( $base-font-size * 1.4 );
+}
+
+.h4 {
+	margin: 10px 0 5px 0;
+		font-size: pxem( $base-font-size * 1.2 );
+}
+
+.h5 {
+	margin: 10px 0 5px 0;
+		font-size: pxem( $base-font-size * 1 );
+}
+
+.h6 {
+	margin: 10px 0 5px 0;
+		font-size: pxem( $base-font-size * .8 );
+}
+
+
+/* Links */
+
+a 			{ color: #3480BA; text-decoration: none; }
+a:visited 	{ color: #3480BA; }
+a:hover 	{ color: #3480BA; text-decoration: underline; }
+a:focus 	{ color: #3480BA; }
+a:active 	{ color: #3480BA; }

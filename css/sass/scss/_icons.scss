@@ -1,0 +1,299 @@
+@font-face {
+	font-family: 'icomoonn';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoonn';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-drink, .icon-drink-2, .icon-mug, .icon-pencil, .icon-bubbles, .icon-airplane, .icon-food, .icon-aboveground-rail, .icon-heliport, .icon-bus, .icon-ferry, .icon-twitter, .icon-belowground-rail, .icon-parking, .icon-subway, .icon-close, .icon-menu, .icon-screen, .icon-clock, .icon-map-marker, .icon-calendar, .icon-microphone, .icon-mail, .icon-fast-food, .icon-lodging, .icon-google-plus, .icon-facebook, .icon-twitter-2, .icon-feed, .icon-mail-2, .icon-flickr, .icon-mobile, .icon-support, .icon-eye, .icon-earth, .icon-users, .icon-pushpin, .icon-map, .icon-file, .icon-cog, .icon-signup, .icon-power-cord, .icon-image, .icon-compass, .icon-calendar-2, .icon-key, .icon-attachment, .icon-point-right, .icon-warning, .icon-radio-checked, .icon-file-pdf, .icon-gift, .icon-credit, .icon-tags, .icon-rocket, .icon-plus, .icon-minus {
+	font-family: 'icomoonn';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-drink:before {
+	content: "\21";
+}
+.icon-drink-2:before {
+	content: "\22";
+}
+.icon-mug:before {
+	content: "\23";
+}
+.icon-pencil:before {
+	content: "\24";
+}
+.icon-bubbles:before {
+	content: "\25";
+}
+.icon-airplane:before {
+	content: "\26";
+}
+.icon-food:before {
+	content: "\27";
+}
+.icon-aboveground-rail:before {
+	content: "\28";
+}
+.icon-heliport:before {
+	content: "\29";
+}
+.icon-bus:before {
+	content: "\2a";
+}
+.icon-ferry:before {
+	content: "\2b";
+}
+.icon-twitter:before {
+	content: "\2c";
+}
+.icon-belowground-rail:before {
+	content: "\2d";
+}
+.icon-parking:before {
+	content: "\2e";
+}
+.icon-subway:before {
+	content: "\2f";
+}
+.icon-close:before {
+	content: "\30";
+}
+.icon-menu:before {
+	content: "\31";
+}
+.icon-screen:before {
+	content: "\32";
+}
+.icon-clock:before {
+	content: "\33";
+}
+.icon-map-marker:before {
+	content: "\34";
+}
+.icon-calendar:before {
+	content: "\35";
+}
+.icon-microphone:before {
+	content: "\36";
+}
+.icon-mail:before {
+	content: "\37";
+}
+.icon-fast-food:before {
+	content: "\38";
+}
+.icon-lodging:before {
+	content: "\39";
+}
+.icon-google-plus:before {
+	content: "\3a";
+}
+.icon-facebook:before {
+	content: "\3b";
+}
+.icon-twitter-2:before {
+	content: "\3c";
+}
+.icon-feed:before {
+	content: "\3d";
+}
+.icon-mail-2:before {
+	content: "\3e";
+}
+.icon-flickr:before {
+	content: "\3f";
+}
+.icon-mobile:before {
+	content: "\40";
+}
+.icon-support:before {
+	content: "\41";
+}
+.icon-eye:before {
+	content: "\42";
+}
+.icon-earth:before {
+	content: "\43";
+}
+.icon-users:before {
+	content: "\44";
+}
+.icon-pushpin:before {
+	content: "\45";
+}
+.icon-map:before {
+	content: "\46";
+}
+.icon-file:before {
+	content: "\47";
+}
+.icon-cog:before {
+	content: "\48";
+}
+.icon-signup:before {
+	content: "\49";
+}
+.icon-power-cord:before {
+	content: "\4a";
+}
+.icon-image:before {
+	content: "\4b";
+}
+.icon-compass:before {
+	content: "\4c";
+}
+.icon-calendar-2:before {
+	content: "\4d";
+}
+.icon-key:before {
+	content: "\4e";
+}
+.icon-attachment:before {
+	content: "\4f";
+}
+.icon-point-right:before {
+	content: "\50";
+}
+.icon-warning:before {
+	content: "\51";
+}
+.icon-radio-checked:before {
+	content: "\52";
+}
+.icon-file-pdf:before {
+	content: "\53";
+}
+.icon-gift:before {
+	content: "\54";
+}
+.icon-credit:before {
+	content: "\55";
+}
+.icon-tags:before {
+	content: "\56";
+}
+.icon-rocket:before {
+	content: "\57";
+}
+.icon-plus:before {
+	content: "\58";
+}
+.icon-minus:before {
+	content: "\59";
+}
+
+
+
+
+
+/* Speakers and Presentations */
+
+.yatta-icon-mail,
+.yatta-icon-twitter,
+.yatta-icon-screen,
+.yatta-icon-map-marker,
+.yatta-icon-clock,
+.yatta-icon-calendar,
+.yatta-icon-pencil {
+    margin-right: 10px;
+}
+
+
+.yatta-icon-bubbles {
+    margin-right: 8px;
+}
+
+.yatta-icon-mail,
+.yatta-icon-screen,
+.yatta-icon-pencil, 
+.yatta-icon-twitter,
+.yatta-icon-map-marker,
+.yatta-icon-clock,
+.yatta-icon-calendar,
+.yatta-icon-bubbles {
+    	color: #5E7860;
+}
+
+/* Places */
+
+.yatta-icon-microphone,
+.yatta-icon-drink,
+.yatta-icon-drink-2,
+.yatta-icon-mug,
+.yatta-icon-food,
+.yatta-icon-fast-food,
+.yatta-icon-lodging,
+.yatta-icon-parking,
+.yatta-icon-airplane,
+.yatta-icon-belowground-rail,
+.yatta-icon-aboveground-rail,
+.yatta-icon-heliport,
+.yatta-icon-ferry,
+.yatta-icon-bus {
+    @include inline-block;
+    padding-top: 11px;
+    	font-size:  pxem( $base-font-size * 2.8 );
+}
+
+.yatta-icon-subway {
+    display : inline-block;
+	padding-top: 6px;
+		font-size:  pxem( $base-font-size * 2.8 );
+}
+
+
+/* Icon - Text */
+
+.yatta-icon-mobile,
+.yatta-icon-support,
+.yatta-icon-eye,
+.yatta-icon-earth,
+.yatta-icon-users,
+.yatta-icon-pushpin,
+.yatta-icon-map,
+.yatta-icon-file,
+.yatta-icon-cog,
+.yatta-icon-signup,
+.yatta-icon-power-cord,
+.yatta-icon-image,
+.yatta-icon-compass,
+.yatta-icon-calendar-2,
+.yatta-icon-key,
+.yatta-icon-attachment,
+.yatta-icon-point-right,
+.yatta-icon-warning,
+.yatta-icon-file-pdf,
+.yatta-icon-radio-checked,
+.yatta-icon-gift,
+.yatta-icon-credit,
+.yatta-icon-tags,
+.yatta-icon-rocket {
+	font-size:  pxem( $base-font-size * 2.8 );
+}

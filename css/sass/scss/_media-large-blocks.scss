@@ -1,0 +1,55 @@
+/* //////// Large - Blocks //////// */
+
+
+
+
+
+
+
+
+/* --------------------------- Speakers */
+
+.yatta-speakers-block-li,
+.yatta-speakers-block-container img,
+.yatta-speakers-block-infos {
+	@include inline-block;
+}
+
+.yatta-speakers-block-li {
+	width: 31.33%;
+	margin: 0 3% 3% 0;
+		font-size:  pxem( $base-font-size * 0.9 );
+}
+
+.yatta-speakers-block-li:nth-child(3n+3) {
+	margin-right: 0;
+}
+
+.yatta-speakers-block-container {
+	display: block;
+	position: relative;
+	width: 100%;
+}
+
+.yatta-speakers-block-infos {
+	width: 40%;
+	margin-left: 5%;
+}
+
+
+.yatta-speakers-block-li img {
+	width: 52%;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+
+
+/* --------------------------- News */
+
+.yatta-news-block-title a:hover {
+		text-decoration: underline;
+}
+
+
+

@@ -1,0 +1,104 @@
+/* Menu for small screen */ 
+
+/* --------------------------------------------- Zone Menu */
+
+
+   /* Menu toggle */
+
+    nav ul {
+        margin:0;
+        padding:0;
+    }
+
+    nav li {
+        margin:0;
+        padding:0;
+    }
+
+    /* Menu inline */
+
+    #yatta-zone-container-menu {
+        position: relative;
+        clear: both;
+    }
+
+
+        
+    #yatta-zone-menu-link {
+        float: right;
+        text-decoration: none;
+        padding: 19px 10px;
+        display: block;
+        color: #fff;
+        background-color: #AE5C10;
+        background-color: rgba(174, 92,16, 0.9);
+    }
+    #yatta-zone-nav-menu {
+        clear: both;
+        min-width: inherit;
+        float: none;
+    }
+    #yatta-zone-nav-menu, #yatta-zone-nav-menu > ul ul {
+        overflow: hidden;
+        max-height: 0;
+        background-color: #f4f4f4;
+    }
+    #yatta-zone-nav-menu > li > ul.sub-menu {
+        padding: 0px;
+        border: none;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+    }
+    #yatta-zone-nav-menu.active, #yatta-zone-nav-menu > ul ul.active {
+        max-height: 55em;
+    }
+    #yatta-zone-nav-menu ul {
+        display: inline;
+    }
+    #yatta-zone-nav-menu > ul {
+        border-top: 1px solid #808080;
+    }
+    #yatta-zone-nav-menu li, #yatta-zone-nav-menu > ul > li {
+        display: block;
+    }
+    #yatta-zone-nav-menu li a {
+        color: #000;
+        display: block;
+        padding: 15px 20px 15px 30px;
+        border-bottom: 1px solid #808080;
+        position: relative;
+    }
+    #yatta-zone-nav-menu li.menu-item-has-children > a:after {
+        content: '+';
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        font-size: 1.5em;
+        padding: 0.55em 0.5em;
+    }
+    #yatta-zone-nav-menu li.menu-item-has-children > a.active:after {
+        content: "-";
+    }
+    #yatta-zone-nav-menu ul ul > li a {
+        background-color: #e4e4e4;
+        padding: 15px 20px 15px 50px;
+    }
+    #yatta-zone-nav-menu ul ul ul > li a {
+        background-color: #D7D7D7;
+        padding: 15px 20px 15px 70px;
+    }
+    #yatta-zone-nav-menu ul ul, #yatta-zone-nav-menu ul ul ul {
+        display: inherit;
+        position: relative;
+        left: auto; top:auto;
+        box-shadow: none; 
+        border:none;
+    }

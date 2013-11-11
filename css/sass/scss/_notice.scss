@@ -1,0 +1,50 @@
+// yatta-notice.scss
+// Style yatta-notice messages
+// ---------------------
+
+$yatta-notice-text:             		#666 !default;
+$yatta-notice-background:       		#f8f8f8 !default;
+$yatta-notice-border:           		#999 !default;
+$yatta-notice-fontfamily:      		Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif !default;
+
+@mixin notice( $yatta-notice-text, $yatta-notice-fontfamily, $yatta-notice-background, $yatta-notice-border ) {
+	padding: 0;
+	margin: 0;
+	background-color: $yatta-notice-background;
+	border: 1px solid $yatta-notice-border;
+	@include border-radius(3px);
+	@include box-shadow(#fff 0 1px 0 inset);
+	color: $yatta-notice-text;
+	text-align: left;
+	font-size: pxem(14);
+	font-family: $yatta-notice-fontfamily;
+	text-transform: none;
+		p { margin: 20px; }
+}
+
+
+$yatta-notice-title-text:			#fff !default;
+$yatta-notice-title-background:		#999 !default;
+
+@mixin notice-title( $yatta-notice-title-text, $yatta-notice-background ) {
+	max-width: 100%;
+	height: auto;
+	width: auto;
+	box-sizing: border-box;
+	padding: 8px 35px 8px 14px;
+	margin: 0 0 10px 0;
+	font-size: pxem(16);
+	background-color: $yatta-notice-title-background;
+	color: $yatta-notice-title-text;
+	@include text-shadow( #999 0 0 0);
+}
+
+
+.yatta-notice {
+	@include notice( $yatta-notice-text, $yatta-notice-fontfamily, $yatta-notice-background, $yatta-notice-border );
+	clear: both;
+}
+
+.yatta-notice-title {
+	@include notice-title( $yatta-notice-title-text, $yatta-notice-background );
+}
