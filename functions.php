@@ -31,6 +31,11 @@
 *
 ------------------------------------------------------------------------------------------------------------------------- */
 
+require_once( trailingslashit( get_template_directory() ) . 'yatta/theme-muplugins/00_katt-singleton-plugin.class.php' );
+require_once( trailingslashit( get_template_directory() ) . 'yatta/theme-muplugins/01_katt-helper.class.php' );
+
+
+
 /* Load the Yatta Class. */
 require_once( trailingslashit( get_template_directory() ) . 'yatta/yatta.class.php' );
 
@@ -50,19 +55,19 @@ function yatta_theme_setup() {
 
 
     /* Load the stylesheets in the header. */
-    add_action('wp_enqueue_scripts','yatta_head_css',7);
+    add_action('wp_enqueue_scripts','yatta_head_css', 7);
     /* Load the Modernizr script in the header. */
-    add_action('wp_enqueue_scripts','yatta_head_js',9);
+    add_action('wp_enqueue_scripts','yatta_head_js', 9);
     /* Load other javascripts in the footer. */
-    add_action('wp_footer','yatta_foot_js',10);
+    add_action('wp_footer','yatta_foot_js', 10);
 
 
     /* Load the <title> markup in the header. */
-    add_action('yatta_head','yatta_head_title_markup',7);
+    add_action('yatta_head','yatta_head_title_markup', 7);
     /* Load the <link type="image/x-icon"> markup in the header. */
-    add_action('yatta_head','yatta_head_favicon',8);
+    add_action('yatta_head','yatta_head_favicon', 8);
     /* Load the <link type="application/rss+xml"> markup in the header. */
-    add_action('yatta_head','yatta_head_rss',9);
+    add_action('yatta_head','yatta_head_rss', 9);
 
       
 
@@ -90,11 +95,19 @@ function yatta_theme_setup() {
     add_action( 'admin_menu', 'yatta_remove_menus_from_backend', 999 );
 
     /* Remove some default blocks from Aqua Page Builder */
-    yatta_apb_unregister_block();
-    /* Load APB blocks. */
-    yatta_apb_block_generic();
-    /* Deregister default AQ Page Builder styles */
-    add_action( 'init', 'yatta_tweak_aqua_view_enqueue' );
+    yatta_aqpb_unregister_block();
+    /* Load AQPB blocks. */
+    yatta_aqpb_block_generic();
+    /* Deregister default AQ Page Builder styles and scripts */
+    add_action( 'init', 'yatta_tweak_aqpb_view_enqueue' );
+    add_action( 'admin_print_styles' , 'yatta_tweak_aqpb_css_enqueue' , 10 );
+    add_action( 'admin_print_styles' , 'yatta_tweak_aqpb_js_enqueue' , 10 );
+    add_action( 'init' , 'yatta_tweak_aqpb_jsview_enqueue' , 10 );
+    /* Register default AQ Page Builder styles and scripts for an "in theme" integration */
+    add_action( 'admin_enqueue_scripts' , 'yatta_aqpb_css_enqueue' , 10 );
+    add_action( 'admin_enqueue_scripts' , 'yatta_aqpb_js_enqueue' , 10 );
+    add_action( 'init' , 'yatta_aqpb_jsview_enqueue' , 10 );
+    
     /* Deregister default SMOF styles */
     add_action( 'admin_print_styles', 'yatta_tweak_smof_view_enqueue', 10 );
 

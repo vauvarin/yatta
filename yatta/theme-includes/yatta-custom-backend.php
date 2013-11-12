@@ -271,11 +271,55 @@ function yatta_remove_default_image_sizes( $sizes) {
  *
  * @since 1.0.0
  */
-function yatta_tweak_aqua_view_enqueue() {
+function yatta_tweak_aqpb_view_enqueue() {
   // Make it sure if class exist first
   if ( class_exists( 'AQ_Page_Builder' ) ) {
       // Deregister default AQ Page Builder styles
       wp_dequeue_style( 'aqpb-view-css' );
+  }
+}
+
+/**
+ * Deregister default AQ Page Builder styles
+ * 
+ *
+ * @since 1.0.0
+ */
+function yatta_tweak_aqpb_css_enqueue() {
+  // Make it sure if class exist first
+  if ( class_exists( 'AQ_Page_Builder' ) ) {
+      // Deregister default AQ Page Builder styles
+      wp_dequeue_style( 'aqpb-css' );
+      wp_dequeue_style( 'aqpb-blocks-css' );
+  }
+}
+
+/**
+ * Deregister default AQ Page Builder scripts
+ * 
+ *
+ * @since 1.0.0
+ */
+function yatta_tweak_aqpb_js_enqueue() {
+  // Make it sure if class exist first
+  if ( class_exists( 'AQ_Page_Builder' ) ) {
+      // Deregister default AQ Page Builder scripts
+      wp_dequeue_script( 'aqpb-js' );
+      wp_dequeue_script( 'aqpb-fields-js' );
+  }
+}
+
+/**
+ * Deregister default AQ Page Builder scripts
+ * 
+ *
+ * @since 1.0.0
+ */
+function yatta_tweak_aqpb_jsview_enqueue() {
+  // Make it sure if class exist first
+  if ( class_exists( 'AQ_Page_Builder' ) ) {
+      // Deregister default AQ Page Builder scripts
+      wp_dequeue_script( 'aqpb-view-js' );
   }
 }
 
@@ -295,25 +339,103 @@ function yatta_tweak_smof_view_enqueue() {
 }
 
 
+
 /**
  * Unregister AQ Page Builder default blocks
  * 
  *
  * @since 1.0.0
  */
-function yatta_apb_unregister_block() {
+function yatta_aqpb_unregister_block() {
   aq_unregister_block('AQ_Widgets_Block');
   aq_unregister_block('AQ_Column_Block');
   aq_unregister_block('AQ_Text_Block');
 }
 
 
+/**
+ * Enqueueing aqbb's stylesheets for an "in theme" integration.
+ *
+ * @since 1.0.0
+ */
+function yatta_aqpb_css_enqueue() {
+    if ( is_admin() & class_exists( 'AQ_Page_Builder' ) ) {
+        wp_register_style( 'style-aqpb-css', PARENT_THEME_URI . '/yatta/theme-muplugins/apb/assets/css/aqpb.css' );
+        wp_enqueue_style( 'style-aqpb-css' );
+
+        wp_register_style( 'style-aqpb-blocks-css', PARENT_THEME_URI . '/yatta/theme-muplugins/apb/assets/css/aqpb_blocks.css' );
+        wp_enqueue_style( 'style-aqpb-aqp-blocks-css' );
+    }
+}
+
+
+/**
+ * Enqueueing aqbb's js script for an "in theme" integration.
+ *
+ * @since 1.0.0
+ */
+function yatta_aqpb_js_enqueue() {
+    if ( is_admin() & class_exists( 'AQ_Page_Builder' ) ) {
+        wp_register_script('script-aqpb-aqpb', PARENT_THEME_URI . '/yatta/theme-muplugins/apb/assets/js/aqpb.js' );
+        wp_enqueue_script('script-aqpb-aqpb');
+        wp_register_script('script-aqpb-aqpbfields', PARENT_THEME_URI . '/yatta/theme-muplugins/apb/assets/js/aqpb-fields.js' );
+        wp_enqueue_script('script-aqpb-aqpbfields');
+
+        wp_enqueue_style('wp-color-picker');
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('jquery-ui-sortable');
+        wp_enqueue_script('jquery-ui-resizable');
+        wp_enqueue_script('jquery-ui-draggable');
+        wp_enqueue_script('jquery-ui-droppable');
+        wp_enqueue_script('iris');
+        wp_enqueue_script('wp-color-picker');
+        wp_enqueue_script('aqpb-js');
+        wp_enqueue_script('aqpb-fields-js');
+        
+        // Media library uploader
+        wp_enqueue_script('thickbox');  
+        wp_enqueue_style('thickbox');  
+        wp_enqueue_script('media-upload');
+        wp_enqueue_media();
+
+    }
+}
+
+/**
+ * Enqueueing aqbb's js script for an "in theme" integration.
+ *
+ * @since 1.0.0
+ */
+function yatta_aqpb_jsview_enqueue() {
+    if ( !is_admin() & class_exists( 'AQ_Page_Builder' ) ) {
+        wp_register_script('script-aqpb-aqpbview', PARENT_THEME_URI . '/yatta/theme-muplugins/apb/assets/js/aqpb-view.js' );
+        wp_enqueue_script('script-aqpb-aqpbview');
+    }
+    
+}
+
+
+
+/**
+ * Enqueueing front-end javascripts (Modernizr) in the header ("wp_enqueue_scripts" hook).
+ *
+ * @since 1.0.0
+ */
+function yatta_aqpb_js() {
+    if ( !is_admin() ) {
+        wp_register_script('modernizr', YATTA_JAVASCRIPTS . '/library/modernizr-2.6.2.min.js');
+        wp_enqueue_script('modernizr');
+        wp_register_script('leaflet', YATTA_JAVASCRIPTS . '/library/leaflet-0.5.1.min.js');
+
+    }
+}
+
 
  /**
  * Register generic blocks - Aqua Page Builder
  *
  */
-function yatta_apb_block_generic() {
+function yatta_aqpb_block_generic() {
   aq_register_block('AQ_image_Block');
   aq_register_block('AQ_places_Block');
   aq_register_block('AQ_news_Block');

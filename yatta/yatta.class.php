@@ -27,6 +27,9 @@ class Yatta extends SingletonPlugin {
 		/* Define yatta, parent theme and child theme constants. */
 		add_action( 'after_setup_theme', array( &$this, 'constants' ), 1 );
 
+		/* Load yatta muplugins files. */
+		add_action( 'after_setup_theme', array( &$this, 'yatta_muplugins' ), 2 );
+
 		/* Load some core functions. */
 		add_action( 'after_setup_theme', array( &$this, 'yatta_core' ), 2 );
 
@@ -91,6 +94,9 @@ class Yatta extends SingletonPlugin {
 		/* Sets the path to the yatta views directory. */
 		//define( 'YATTA_THEME_VIEWS', trailingslashit( YATTA_DIR ) . 'theme-views' );
 
+		/* Sets the path to the Yatta smof directory. */
+		define( 'YATTA_MUPLUGINS', trailingslashit( YATTA_DIR ) . 'theme-muplugins' );
+
 		/* Sets the path to the Yatta plugins directory. */
 		define( 'YATTA_THEME_PLUGINS', trailingslashit( YATTA_DIR ) . 'theme-plugins' );
 
@@ -119,6 +125,23 @@ class Yatta extends SingletonPlugin {
 		define( 'YATTA_JAVASCRIPTS', trailingslashit( PARENT_THEME_URI ) . 'js' );
 
 		
+	}
+
+
+
+	/**
+	 * Adds some core functions.
+	 *
+	 * @since 1.0.0
+	 */
+	public function yatta_muplugins() {
+
+		/* Load the Yatta muplugins files. */
+		require_once( trailingslashit( YATTA_MUPLUGINS ) . '/katt-class/katt-css-js.class.php' );
+		require_once( trailingslashit( YATTA_MUPLUGINS ) . '/katt-class/katt-settings.class.php' );
+		require_once( trailingslashit( YATTA_MUPLUGINS ) . '/katt-class/katt-cpt.class.php' );
+		require_once( trailingslashit( YATTA_MUPLUGINS ) . '/apb/aq-page-builder.php' );
+
 	}
 
 
